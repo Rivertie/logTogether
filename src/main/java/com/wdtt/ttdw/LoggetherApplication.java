@@ -62,7 +62,7 @@ public class LoggetherApplication extends WebMvcConfigurationSupport {
 			.cacheActive(false)
 			.build();
 	}
-	
+	 
 	/**
 	 * ViewResolver 
 	 */
