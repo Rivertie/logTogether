@@ -1,11 +1,12 @@
-package com.wdtt.entity;
+package com.wdtt.ttdw.entity;
+
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -15,14 +16,13 @@ import lombok.Setter;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter
-public class Comment {
+public class Team {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	private String content;
+	private String name;
 	
-	@ManyToOne
-	private Member writer;
+	private Date createDate;
 }

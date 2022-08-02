@@ -1,4 +1,4 @@
-package com.wdtt;
+package com.wdtt.ttdw;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

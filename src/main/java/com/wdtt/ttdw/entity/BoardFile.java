@@ -1,6 +1,4 @@
-package com.wdtt.entity;
-
-import java.sql.Date;
+package com.wdtt.ttdw.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -16,7 +14,7 @@ import lombok.Setter;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter
-public class Team {
+public class BoardFile {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,5 +22,8 @@ public class Team {
 	
 	private String name;
 	
-	private Date createDate;
+	private long size;
+	
+	private String type;
+	
 }

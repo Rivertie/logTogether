@@ -1,10 +1,15 @@
-package com.wdtt.entity;
+package com.wdtt.ttdw.entity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -14,7 +19,7 @@ import lombok.Setter;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter
-public class BoardFile {
+public class Member {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +27,16 @@ public class BoardFile {
 	
 	private String name;
 	
-	private long size;
+	private String email;
 	
-	private String type;
+	private String password;
+	
+	private String status;
+	
+	@ManyToMany
+	private List<Board> likeBoards = new ArrayList<>();
+	
+	@OneToMany
+	private List<Team> teams = new ArrayList<>();
 	
 }

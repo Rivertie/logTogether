@@ -1,4 +1,4 @@
-package com.wdtt.entity;
+package com.wdtt.ttdw.entity;
 
 import java.util.ArrayList;
 import java.util.Date;
