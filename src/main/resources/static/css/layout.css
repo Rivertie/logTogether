@@ -1,0 +1,9 @@
+.header-text{
+    text-align: center;
+}
+
+.bono{
+    background: url( "../image/bonobono.jfif") no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
