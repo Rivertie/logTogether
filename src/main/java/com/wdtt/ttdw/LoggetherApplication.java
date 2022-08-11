@@ -39,6 +39,8 @@ public class LoggetherApplication extends WebMvcConfigurationSupport {
 		super.addResourceHandlers(registry);
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 		registry.addResourceHandler("/WEB-INF/**").addResourceLocations("/WEB-INF/");
+		registry.addResourceHandler("/css/**").addResourceLocations("classpath:/static/css/");
+		registry.addResourceHandler("/image/**").addResourceLocations("classpath:/static/image/");
 	}
 	
 // ===================== Pebble Template 설정 =====================
