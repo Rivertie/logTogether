@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
@@ -20,11 +22,12 @@ import com.mitchellbosecke.pebble.spring4.PebbleViewResolver;
 import com.mitchellbosecke.pebble.spring4.extension.SpringExtension;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {JpaRepositoriesAutoConfiguration.class})
+@EnableAutoConfiguration
 @ComponentScan("com.wdtt.ttdw")
-@EntityScan("com.wdtt.entity")
-//@EnableJpaRepositories("com.wdtt.repository")
+@EntityScan("com.wdtt.ttdw.entity")
+@EnableJpaRepositories("com.wdtt.ttdw.entity.repository")
 @EnableJpaAuditing
+@EnableWebMvc
 public class LoggetherApplication extends WebMvcConfigurationSupport {
 
 	private ServletContext servletContext;
