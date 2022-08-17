@@ -3,19 +3,12 @@ package com.wdtt.ttdw.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
+import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import lombok.Getter;
-import lombok.Setter;
-
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Getter @Setter
@@ -26,9 +19,10 @@ public class Member {
 	private long id;
 	
 	private String name;
-	
+
 	private String email;
-	
+
+	@Column(length = 100, nullable = false)
 	private String password;
 	
 	private String status;
@@ -38,5 +32,12 @@ public class Member {
 	
 	@OneToMany
 	private List<Team> teams = new ArrayList<>();
-	
+
+	@Builder
+	public Member(Long id, String email, String password) {
+		this.id = id;
+		this.email = email;
+		this.password = password;
+	}
+
 }
